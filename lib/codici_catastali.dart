@@ -1,12 +1,8 @@
 List<Map<String, String>>? getCatastalDataFromId(String id) {
-  return codici_catastali.where((element) => element['id']==id.toUpperCase()).toList();
+  return codiciCatastali.where((element) => element['id']==id.toUpperCase()).toList();
 }
 
-main() {
-  print(getCatastalDataFromId("E625"));
-}
-
-List<Map<String, String>> codici_catastali = 
+List<Map<String, String>> codiciCatastali = 
  [{"id": "A001", "cap": "35031", "comune": "Abano Terme", "zona": "Nord-est", "regione": "Veneto", "provincia": "Padova", "provincia_sigla": "PD", "stato": "Italia"},
 {"id": "A004", "cap": "26834", "comune": "Abbadia Cerreto", "zona": "Nord-ovest", "regione": "Lombardia", "provincia": "Lodi", "provincia_sigla": "LO", "stato": "Italia"},
 {"id": "A005", "cap": "23821", "comune": "Abbadia Lariana", "zona": "Nord-ovest", "regione": "Lombardia", "provincia": "Lecco", "provincia_sigla": "LC", "stato": "Italia"},

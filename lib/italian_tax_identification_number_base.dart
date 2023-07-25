@@ -45,6 +45,7 @@ class ItalianTaxIdentificationNumber {
     List<String>? possiblePostalCodes;
     String? birthCountry;
 
+    ssn = ssn.replaceAll(" ", "");
     ssn = ssn.toUpperCase();
     if (ssn.length > 2) {
       firstName = ssn.substring(0, 3);
@@ -83,7 +84,7 @@ class ItalianTaxIdentificationNumber {
                 }
               }
 
-              if (birthYear != null && birthMonth >0 && birthDay != null) {
+              if (birthYear != null && birthMonth > 0 && birthDay != null) {
                 birthDate = DateTime(birthYear, birthMonth, birthDay);
               }
 
@@ -98,8 +99,7 @@ class ItalianTaxIdentificationNumber {
                   birthProvinceCode = townDetails[0]['provincia_sigla'];
                   possiblePostalCodes = townDetails
                       .where((record) =>
-                          record['cap'] != null &&
-                          record['cap']!.isNotEmpty)
+                          record['cap'] != null && record['cap']!.isNotEmpty)
                       .map((record) => record['cap']!)
                       .toList();
                   birthCountry = townDetails[0]['stato'];
@@ -110,18 +110,18 @@ class ItalianTaxIdentificationNumber {
         }
       }
     }
-      this.firstName= optionOf(firstName);
-      this.lastName= optionOf(lastName);
-      this.gender= optionOf(gender);
-      this.birthDate= optionOf(birthDate);
-      this.birthTown= optionOf(birthTown);
-      this.birthZone= optionOf(birthZone);
-      this.birthRegion= optionOf(birthRegion);
-      this.birthProvince= optionOf(birthProvince);
-      this.birthProvinceCode= optionOf(birthProvinceCode);
-      this.possiblePostalCodes= optionOf(possiblePostalCodes);
-      this.birthCountry= optionOf(birthCountry);
-      this.ssn= optionOf(ssn);
+    this.firstName = optionOf(firstName);
+    this.lastName = optionOf(lastName);
+    this.gender = optionOf(gender);
+    this.birthDate = optionOf(birthDate);
+    this.birthTown = optionOf(birthTown);
+    this.birthZone = optionOf(birthZone);
+    this.birthRegion = optionOf(birthRegion);
+    this.birthProvince = optionOf(birthProvince);
+    this.birthProvinceCode = optionOf(birthProvinceCode);
+    this.possiblePostalCodes = optionOf(possiblePostalCodes);
+    this.birthCountry = optionOf(birthCountry);
+    this.ssn = optionOf(ssn);
   }
 
   @override
@@ -142,7 +142,7 @@ class ItalianTaxIdentificationNumber {
     ''';
   }
 
-  bool isFormatValid() => RegExp(r'^([A-Z]{6}[0-9LMNPQRSTUV]{2}[ABCDEHLMPRST]{1}[0-9LMNPQRSTUV]{2}[A-Z]{1}[0-9LMNPQRSTUV]{3}[A-Z]{1})$|([0-9]{11})$').hasMatch(ssn.getOrElse(() => ''));
+  bool isFormatValid() => RegExp(
+          r'^([A-Z]{6}[0-9LMNPQRSTUV]{2}[ABCDEHLMPRST]{1}[0-9LMNPQRSTUV]{2}[A-Z]{1}[0-9LMNPQRSTUV]{3}[A-Z]{1})$|([0-9]{11})$')
+      .hasMatch(ssn.getOrElse(() => ''));
 }
-
-
