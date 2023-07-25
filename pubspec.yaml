@@ -6,10 +6,9 @@ repository: https://github.com/VittorioParagallo/italian_tax_identification_numb
 environment:
   sdk: ^3.0.6
 
-# Add regular dependencies here.
 dependencies:
   dartz: ^0.10.1
-  # path: ^1.8.0
+
 
 dev_dependencies:
   lints: ^2.0.0
