@@ -9,3 +9,7 @@
 ## 0.0.3
 
 - fixed readme and example
+
+## 0.0.4
+
+- fixed readme usage section
