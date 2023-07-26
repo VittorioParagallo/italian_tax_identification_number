@@ -1,6 +1,6 @@
 name: italian_tax_identification_number
 description: a package to verify, calculate and reverse italian tax identification numbers (Codice Fiscale)
-version: 0.0.2
+version: 0.0.3
 repository: https://github.com/VittorioParagallo/italian_tax_identification_number
 
 environment:

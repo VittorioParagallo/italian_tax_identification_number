@@ -5,3 +5,7 @@
 ## 0.0.2
 
 - updated readme
+
+## 0.0.2
+
+- fixed readme and example
