@@ -6,6 +6,6 @@
 
 - updated readme
 
-## 0.0.2
+## 0.0.3
 
 - fixed readme and example
